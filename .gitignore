@@ -22,7 +22,7 @@ go.work
 go.work.sum
 
 # for debug
-.idea/
+bin/
 venv/
 
-conlai
+.idea/
