@@ -1,9 +1,9 @@
-# Bringing AI to the World with ConLAi
+# Bringing AI to the world with ConLAi
 Server for Ledger type Federated Learning
 
 ## What's ConLAi?
-Con(sensus)L(erning)Ai is Server module for Ledger type Federated Learning.  
-Ledger type Federated Learning achieves Federated Learning in a way that feels like Git.  
+Con(sensus)L(erning) Ai is server module for Ledger type federated learning.  
+Ledger type federated learning achieves federated learning in a way that feels like Git.  
 
 ## How to Start
 Just type the following command.
@@ -16,4 +16,12 @@ https://github.com/rosso-ai/pyConLAi
 
 ## License
 This software is dual licensed under AGPL-3.0 and commercial license.  
-If you would like to use a commercial license, please contact Rosso inc.
+If you would like to use a commercial license, please contact [Rosso inc](https://www.rosso-tokyo.co.jp/contact/).
+
+### including OSS
+This software including to the following OSS:
+* [gorilla](https://github.com/gorilla/websocket) : [BSD-2-Clause](https://github.com/gorilla/websocket/blob/main/LICENSE)
+* [protobuf](https://github.com/protocolbuffers/protobuf) : [BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/main/LICENSE)
+
+## Authors
+ConLAi is developed by [Rosso inc](https://www.rosso-tokyo.co.jp/).
