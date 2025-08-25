@@ -5,11 +5,16 @@ Server for Ledger type Federated Learning
 Con(sensus)L(erning) Ai is server module for Ledger type federated learning.  
 Ledger type federated learning achieves federated learning in a way that feels like Git.  
 
+![features](https://github.com/rosso-ai/conlai/blob/main/docs/images/conlai_features.png?raw=true)
+
 ## How to Start
-Just type the following command.
+Docker makes it easy to start a server.
+
 ```shell
-conlai
+docker pull ghcr.io/rosso-ai/conlai:latest
+docker run -d -p 9200:9200 ghcr.io/rosso-ai/conlai
 ```
+
 Connect to the client learning app using Websocket communication on port 9200.  
 Please use the following drivers for client-side learning apps.  
 https://github.com/rosso-ai/pyConLAi
