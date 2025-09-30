@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-var repo Repository
+var repo = Repository{isEmpty: true}
 
 type Client struct {
 	hub  *Hub
