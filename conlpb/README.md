@@ -2,5 +2,5 @@
 
 ## compile
 ```shell
-protoc --go_out=../ --python_out=../tests/pb conl.proto
+protoc --go_out=../ conl.proto
 ```
