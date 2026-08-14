@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
-	"github.com/rosso-ai/conlai/web"
 	"log"
 	"net/http"
+
+	"github.com/rosso-ai/conlai/web"
 )
 
 func main() {
 	hub := web.NewHub()
 	go hub.Run()
 
-	//http.Handle("/", r)
-	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/ws/{clientID}", func(w http.ResponseWriter, r *http.Request) {
 		web.ServeWs(hub, w, r)
 	})
 

@@ -1,12 +1,13 @@
 package web
 
 import (
-	"github.com/gorilla/websocket"
-	"github.com/rosso-ai/conlai/conlpb"
-	"google.golang.org/protobuf/proto"
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/websocket"
+	"github.com/rosso-ai/conlai/conlpb"
+	"google.golang.org/protobuf/proto"
 )
 
 var repo = Repository{isEmpty: true}
@@ -15,6 +16,7 @@ type Client struct {
 	hub  *Hub
 	conn *websocket.Conn
 	send chan []byte
+	id   string
 }
 
 var upGrader = websocket.Upgrader{
@@ -89,6 +91,8 @@ func (c *Client) readPump() {
 }
 
 func ServeWs(hub *Hub, w http.ResponseWriter, r *http.Request) {
+	clientID := r.PathValue("clientID")
+
 	conn, err := upGrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Printf("upGrader: %s", err)
@@ -96,7 +100,7 @@ func ServeWs(hub *Hub, w http.ResponseWriter, r *http.Request) {
 	}
 	log.Print("websocket upgrade done")
 
-	client := &Client{hub: hub, conn: conn, send: make(chan []byte, 256)}
+	client := &Client{hub: hub, conn: conn, send: make(chan []byte, 256), id: clientID}
 	client.hub.register <- client
 
 	go client.readPump()
